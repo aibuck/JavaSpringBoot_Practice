@@ -1,0 +1,9 @@
+package com.Interest.my;
+
+import jakarta.annotation.*;
+
+@Generated
+
+public class InterestController {
+
+}

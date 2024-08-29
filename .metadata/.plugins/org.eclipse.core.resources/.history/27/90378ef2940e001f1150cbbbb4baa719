@@ -1,0 +1,9 @@
+package com.Interest.my;
+
+
+
+@Getter
+
+public class InterestController {
+
+}

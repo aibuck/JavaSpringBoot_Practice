@@ -1,0 +1,33 @@
+package com.mysite.sbb;
+
+import java.util.List;
+import org.springframework.stereotype.Service;
+
+import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
+import jakarta.persistence.criteria.CriteriaBuilder;
+
+@RequiredArgsConstructor
+@Service
+
+public class TodoService {
+	
+	private final TodoRepository todoRepository;
+	
+	public List<TodoEntity> getList(){
+		return this.todoRepository.findAll();
+	}
+	
+	public void create(String content) {
+		TodoEntity todoEntity = new TodoEntity();
+		todoEntity.setContent(content);
+		todoEntity.setCompleted(false);
+		this.todoRepository.save(todoEntity);
+	}
+	
+	@Transactional
+	public void delete(Integer id) {
+		TodoEntity todoEntity = todoRepository.getById(id)
+				.orElseThrow
+	}
+}

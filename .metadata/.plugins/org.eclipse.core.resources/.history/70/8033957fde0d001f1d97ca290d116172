@@ -1,0 +1,25 @@
+package com.mysite.sbb;
+
+import java.util.List;
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+@Service
+
+public class TodoService {
+	
+	private final TodoRepository todoRepository;
+	
+	public List<TodoEntity> getList(){
+		return this.todoRepository.findAll();
+	}
+	
+	public void create(String content) {
+		TodoEntity todoEntity = new TodoEntity();
+		todoEntity.setContent(content);
+		todoEntity.setCompleted(false);
+		this.todoRepository.save(todoEntity);
+	}
+
+}

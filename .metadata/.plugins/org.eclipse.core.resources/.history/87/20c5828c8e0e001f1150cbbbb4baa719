@@ -1,0 +1,32 @@
+package com.api.work;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+@Service
+public class UserService {
+	private final UserRepository userRepository;
+
+	public List<User> getList(){
+		return this.userRepository.findAll();//crud의 read부분
+	}
+	
+	public void addUser(User user) {
+		this.userRepository.save(user);
+	}
+	
+	public User getUser(Integer id) {
+		Optional<User> defUser=
+				this.userRepository.findById(id);
+		if(defUser.isPresent()) {
+			return defUser.get();
+		}else {
+			return null;
+		}
+	}
+}

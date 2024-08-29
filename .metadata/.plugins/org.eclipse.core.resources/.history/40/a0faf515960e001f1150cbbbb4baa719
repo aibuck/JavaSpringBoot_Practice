@@ -1,0 +1,9 @@
+package com.Interest.my;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.api.work.User;
+
+public interface InterestRepository extends JpaRepository<InterestEntity, Integer>{
+
+}

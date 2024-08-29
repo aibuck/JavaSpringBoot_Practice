@@ -1,0 +1,14 @@
+package com.Interest.my;
+
+import org.springframework.stereotype.Service;
+
+import com.api.work.UserRepository;
+
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+@Service
+public class InterestService {
+	private final InterestRepository interestRepository;
+
+}

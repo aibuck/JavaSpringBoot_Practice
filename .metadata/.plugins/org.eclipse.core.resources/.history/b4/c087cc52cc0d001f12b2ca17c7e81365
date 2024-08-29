@@ -1,0 +1,7 @@
+package com.mysite.sbb;
+
+import javax.persistence.*;
+
+public class TodoEntity {
+
+}
